@@ -1,4 +1,4 @@
-function computerChoice(){const compChoice = (Math.floor(Math.random()*3))
+function computerChoice(){let compChoice = (Math.floor(Math.random()*3))
 if (compChoice === 0){
    return "Rock"}
   else if(compChoice === 1){
@@ -11,14 +11,31 @@ if (compChoice === 0){
 
 
 
-const computerSelection = computerChoice();
-const playerSelection = prompt("Choose rock, paper or scissors:");
-console.log("You selected" + " " + playerSelection);
-console.log("Computer selected" + " " + computerChoice())
+/*const computerSelection = computerChoice();*/
+/*const playerSelection = prompt("Choose rock, paper or scissors:");*/
+
 
 
 function playRound (playerSelection, computerSelection){
-    if(playerSelection="Rock",computerSelection="Rock") {console.log("Tie!")
-
+    if (playerSelection === computerSelection){
+        console.log("Tie!");
+    } else if ((playerSelection === "Rock") && (computerSelection === "Paper")){
+        console.log("You lose!");
+    } else if ((playerSelection === "Rock") && (computerSelection === "Scissors")){
+        console.log("You win!");
     }
-} 
+}
+
+
+function playGame(){
+    for (let i = 0; i<5; i++){
+        const playerSelection = prompt("Choose");
+        const computerSelection = computerChoice();
+        console.log("You selected" + " " + playerSelection);
+        console.log("Computer selected" + " " + computerSelection);
+        playRound(playerSelection,computerSelection);
+     
+    }
+}
+
+console.log(playGame())
