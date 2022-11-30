@@ -1,14 +1,24 @@
-const compChoice = Math.floor(Math.random()*3)
-console.log(compChoice);
-
-function computerChoice(){
+function computerChoice(){const compChoice = (Math.floor(Math.random()*3))
 if (compChoice === 0){
-   return console.log("Rock")}
+   return "Rock"}
   else if(compChoice === 1){
-     return   console.log("Paper")
+     return "Paper"
     } else if(compChoice ===2){
-      return  console.log("Scissors")
+      return  "Scissors"
     }
 }
 
-computerChoice()
+
+
+
+const computerSelection = computerChoice();
+const playerSelection = prompt("Choose rock, paper or scissors:");
+console.log("You selected" + " " + playerSelection);
+console.log("Computer selected" + " " + computerChoice())
+
+
+function playRound (playerSelection, computerSelection){
+    if(playerSelection="Rock",computerSelection="Rock") {console.log("Tie!")
+
+    }
+} 
