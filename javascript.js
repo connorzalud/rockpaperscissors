@@ -18,15 +18,18 @@ if (compChoice === 0){
 
 function playRound (playerSelection, computerSelection){
     if (playerSelection === computerSelection){
-        console.log("Tie!");
-    } else if ((playerSelection === "Rock") && (computerSelection === "Paper")){
-        console.log("You lose!");
-    } else if ((playerSelection === "Rock") && (computerSelection === "Scissors")){
-        console.log("You win!");
+        return "Tie!"
+    } else if ((playerSelection === "Rock") && (computerSelection === "Paper") || playerSelection === "Paper" && computerSelection === "Scissors"
+    || playerSelection === "Scissors" && computerSelection === "Rock"){
+        return "You lose!";
+    } else if ((playerSelection === "Rock") && (computerSelection === "Scissors") || playerSelection === "Paper" && computerSelection ==="Rock"
+    || playerSelection === "Scissors" && computerSelection === "Paper"){
+        return "You win!"
     }
 }
 
-
+let playerScore = 0;
+let compScore = 0;
 function playGame(){
     for (let i = 0; i<5; i++){
         const playerSelection = prompt("Choose");
@@ -34,8 +37,23 @@ function playGame(){
         console.log("You selected" + " " + playerSelection);
         console.log("Computer selected" + " " + computerSelection);
         playRound(playerSelection,computerSelection);
+            if (playerSelection === "Rock" && computerSelection === "Paper" || playerSelection === "Paper" && computerSelection ==="Scissors"
+            || playerSelection === "Scissors" && computerSelection ==="Rock"){
+                    ++compScore;
+                    console.log("You lose!");
+            } else if (playerSelection === "Rock" && computerSelection === "Scissors" || playerSelection === "Paper" && computerSelection === "Rock"
+            || playerSelection === "Scissors" && computerSelection === "Paper"){
+                ++playerScore;
+                console.log("You win!");
+            } else if (playerSelection === computerSelection){
+                console.log("Tie!")
+            }
+        console.log("Your score is " + playerScore);
+        console.log("Computer's score is " + compScore);
      
     }
 }
+
+
 
 console.log(playGame())
