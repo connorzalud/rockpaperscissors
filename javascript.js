@@ -31,7 +31,7 @@ function playRound (playerSelection, computerSelection){
 let playerScore = 0;
 let compScore = 0;
 function playGame(){
-    for (let i = 0; i<5; i++){
+    for (let i = 0; i<50; i++){
         const playerSelection = prompt("Choose");
         const computerSelection = computerChoice();
         console.log("You selected" + " " + playerSelection);
@@ -50,6 +50,11 @@ function playGame(){
             }
         console.log("Your score is " + playerScore);
         console.log("Computer's score is " + compScore);
+        if (playerScore === 5){
+            return "Game over! You win!"
+        } else if (compScore === 5){
+            return "Game over! You lose!"
+        }
      
     }
 }
